@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="theme-color" content="#f8f1f0">
+<meta name="description" content="TheAeralla — creative portfolio for UGC, visual concepts and product storytelling.">
+
+<title>TheAeralla — Creative Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #27212a;
+  --muted: #756d77;
+  --paper: #fbf6f4;
+  --line: rgba(39,33,42,.13);
+  --dark: #29232c;
+  --radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(246,207,219,.75),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 24%,
+      rgba(221,211,244,.75),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(211,231,240,.72),
+      transparent 30%
+    ),
+    #fbf6f4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 34px));
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+.nav {
+  position: fixed;
+  z-index: 50;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(760px, calc(100% - 28px));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 15px 12px 22px;
+
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 999px;
+
+  background: rgba(251,246,244,.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 35px rgba(49,38,52,.08);
+}
+
+.brand {
+  font:
+    italic 500 25px/1
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -.7px;
+}
+
+.navlinks {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.navlinks a {
+  padding: 10px 15px;
+  border-radius: 999px;
+
+  color: #635b65;
+  font-size: 14px;
+
+  transition: .25s ease;
+}
+
+.navlinks a:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+.menu {
+  display: none;
+
+  border: 0;
+  background: transparent;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100svh;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+
+  padding: 130px 0 90px;
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 920px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+
+  padding: 8px 13px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.45);
+
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--ink);
+}
+
+h1 {
+  margin: 25px 0 17px;
+
+  font:
+    italic 600 clamp(58px,11vw,132px)/.84
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -.065em;
+}
+
+.hero p {
+  max-width: 630px;
+
+  margin: 0 auto;
+
+  color: var(--muted);
+
+  font-size: clamp(17px,2vw,21px);
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 48px;
+
+  padding: 0 21px;
+
+  border-radius: 999px;
+
+  border: 1px solid var(--ink);
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.dark {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+}
+
+.scroll-note {
+  margin-top: 72px;
+
+  color: #8c828b;
+
+  font-size: 12px;
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 105px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  gap: 30px;
+
+  margin-bottom: 38px;
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+
+  color: #91848e;
+}
+
+h2 {
+  font:
+    500 clamp(42px,6vw,72px)/.98
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -.04em;
+
+  margin: 7px 0 0;
+}
+
+.section-head p {
+  max-width: 390px;
+
+  color: var(--muted);
+
+  line-height: 1.65;
+
+  margin: 0;
+}
+
+/* WORK */
+
+.work-grid {
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background: #eee8e8;
+
+  border: 1px solid rgba(39,33,42,.08);
+
+  min-height: 390px;
+
+  box-shadow:
+    0 16px 50px rgba(47,37,50,.07);
+}
+
+.card:nth-child(1),
+.card:nth-child(4),
+.card:nth-child(7) {
+  grid-column: span 7;
+}
+
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(5),
+.card:nth-child(6),
+.card:nth-child(8),
+.card:nth-child(9) {
+  grid-column: span 5;
+}
+
+.card.tall {
+  min-height: 560px;
+}
+
+.card img,
+.card video {
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .7s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.card:hover img,
+.card:hover video {
+  transform: scale(1.035);
+}
+
+.card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 48%,
+      rgba(24,19,26,.72)
+    );
+
+  pointer-events: none;
+}
+
+.card-info {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+
+  color: white;
+}
+
+.card-info .type {
+  font-size: 11px;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  opacity: .8;
+}
+
+.card-info h3 {
+  font:
+    500 29px/1.1
+    "Playfair Display",
+    serif;
+
+  margin: 5px 0 0;
+}
+
+.card-info p {
+  font-size: 12px;
+
+  opacity: .82;
+
+  margin: 7px 0 0;
+}
+
+.play {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  color: white;
+
+  background: rgba(30,25,32,.5);
+
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  font-size: 14px;
+}
+
+/* STATEMENT */
+
+.statement {
+  padding: 115px 0;
+
+  text-align: center;
+}
+
+.statement .big {
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  font:
+    italic 500 clamp(45px,7vw,88px)/1.02
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -.05em;
+}
+
+.statement p {
+  max-width: 620px;
+
+  margin: 25px auto 0;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.about-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  padding: 42px;
+
+  background: rgba(255,255,255,.43);
+}
+
+.about-card h3 {
+  font:
+    500 35px
+    "Playfair Display",
+    serif;
+
+  margin: 0 0 14px;
+}
+
+.about-card p {
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 25px;
+}
+
+.skill {
+  padding: 9px 13px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  background: rgba(255,255,255,.55);
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 110px 0 55px;
+}
+
+.contact-box {
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding: 78px 25px;
+
+  border-radius: 36px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4d9df,
+      #e7def4 52%,
+      #dcebf2
+    );
+
+  border: 1px solid rgba(39,33,42,.08);
+}
+
+.contact-box::before,
+.contact-box::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: white;
+
+  width: 180px;
+  height: 180px;
+
+  opacity: .55;
+}
+
+.contact-box::before {
+  left: -80px;
+  top: -80px;
+}
+
+.contact-box::after {
+  right: -80px;
+  bottom: -100px;
+}
+
+.contact-box > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+.contact-box h2 {
+  margin: 10px 0 18px;
+}
+
+.contact-box p {
+  max-width: 590px;
+
+  margin: 0 auto;
+
+  color: #6e6570;
+
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.contact-links a {
+  background: var(--dark);
+
+  color: white;
+
+  border-color: var(--dark);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 25px 0 42px;
+
+  color: #817680;
+
+  font-size: 12px;
+}
+
+.footer-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid var(--line);
+
+  padding-top: 20px;
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  transition:
+    opacity .75s ease,
+    transform .75s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+
+  transform: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .nav {
+    top: 10px;
+
+    padding: 10px 12px 10px 17px;
+  }
+
+  .brand {
+    font-size: 23px;
+  }
+
+  .navlinks {
+    display: none;
+
+    position: absolute;
+
+    top: 58px;
+    left: 0;
+    right: 0;
+
+    padding: 9px;
+
+    flex-direction: column;
+
+    background: rgba(251,246,244,.96);
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    box-shadow:
+      0 15px 35px rgba(40,30,45,.1);
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .navlinks a {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .scroll-note {
+    margin-top: 52px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head p {
+    margin-top: 16px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card:nth-child(n) {
+    grid-column: auto;
+
+    min-height: 440px;
+  }
+
+  .card.tall {
+    min-height: 510px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 30px;
+  }
+
+  .statement {
+    padding: 80px 0;
+  }
+
+  .contact {
+    padding-top: 70px;
+  }
+
+  .contact-box {
+    padding: 62px 20px;
+
+    border-radius: 28px;
+  }
+
+  .footer-row {
+    display: block;
+
+    line-height: 1.8;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="nav">
+
+  <a class="brand" href="#top">
+    theaeralla
+  </a>
+
+  <nav class="navlinks" id="navlinks">
+
+    <a href="#work">
+      Work
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </nav>
+
+  <button
+    class="menu"
+    id="menu"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+<main id="top">
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-inner reveal">
+
+    <span class="eyebrow">
+      Creative portfolio
+    </span>
+
+    <h1>
+      make it<br>
+      beautiful.
+    </h1>
+
+    <p>
+      UGC, visual concepts and product storytelling
+      with a soft, editorial point of view.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        class="btn dark"
+        href="#work"
+      >
+        View selected work ↘
+      </a>
+
+      <a
+        class="btn"
+        href="#contact"
+      >
+        Let's create together
+      </a>
+
+    </div>
+
+    <div class="scroll-note">
+      scroll to explore
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section
+  class="section"
+  id="work"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          Selected work
+        </div>
+
+        <h2>
+          A little visual world.
+        </h2>
+
+      </div>
+
+      <p>
+        A curated mix of beauty, jewellery,
+        fashion and lifestyle visuals —
+        chosen to show range without repeating
+        the same content twice.
+      </p>
+
+    </div>
+
+
+    <div class="work-grid">
+
+
+      <!-- 01 -->
+
+      <article class="card tall reveal">
+
+        <img
+          src="assets/072e6f57b5292db79f49dd4fd1f3594d.jpg"
+          alt="Rings collection creative"
+          loading="lazy"
+        >
+
+        <div class="card-info">
+
+          <div class="type">
+            Jewellery · Campaign
+          </div>
+
+          <h3>
+            Rings Collection
+          </h3>
+
+          <p>
+            Editorial product storytelling
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="card tall reveal">
+
+        <img
+          src="assets/ea6882d888a8ec5a6909cc692ec58893.jpg"
+          alt="Skincare creative"
+          loading="lazy"
+        >
+
+        <div class="card-info">
+
+          <div class="type">
+            Beauty · Concept
+          </div>
+
+          <h3>
+            Fresh Skin, Bold Colour
+          </h3>
+
+          <p>
+            Skincare visual direction
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="card reveal">
+
+        <img
+          src="assets/ChatGPT Image Apr 16, 2026, 03_25_05 PM.png"
+          alt="Gold jewellery editorial"
+          loading="lazy"
+        >
+
+        <div class="card-info">
+
+          <div class="type">
+            Jewellery · Editorial
+          </div>
+
+          <h3>
+            Golden Details
+          </h3>
+
+          <p>
+            Luxury-inspired product visual
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 VIDEO -->
+
+      <article class="card reveal">
+
+        <video
+          src="assets/lv_0_20260609135601.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <span class="play">
+          ▶
+        </span>
+
+        <div class="card-info">
+
+          <div class="type">
+            Motion · Jewellery
+          </div>
+
+          <h3>
+            In Motion
+          </h3>
+
+          <p>
+            Short-form product storytelling
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 VIDEO -->
+
+      <article class="card reveal">
+
+        <video
+          src="assets/VID_20251211_063011_615.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <span class="play">
+          ▶
+        </span>
+
+        <div class="card-info">
+
+          <div class="type">
+            Fashion · Motion
+          </div>
+
+          <h3>
+            Soft Steps
+          </h3>
+
+          <p>
+            Editorial fashion sequence
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 06 VIDEO -->
+
+      <article class="card reveal">
+
+        <video
+          src="assets/VID_20251206_001457_902.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <span class="play">
+          ▶
+        </span>
+
+        <div class="card-info">
+
+          <div class="type">
+            Beauty · Motion
+          </div>
+
+          <h3>
+            Nail Edit
+          </h3>
+
+          <p>
+            Beauty-focused visual content
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="card reveal">
+
+        <img
+          src="assets/IMG_20260615_183506_120.webp"
+          alt="Lip product creative"
+          loading="lazy"
+        >
+
+        <div class="card-info">
+
+          <div class="type">
+            Beauty · Product
+          </div>
+
+          <h3>
+            Gloss &amp; Glow
+          </h3>
+
+          <p>
+            Clean product styling
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="card reveal">
+
+        <img
+          src="assets/31cbd087e7c7c85455e9604a133ae451.jpg"
+          alt="Blue-toned visual moodboard"
+          loading="lazy"
+        >
+
+        <div class="card-info">
+
+          <div class="type">
+            Art Direction
+          </div>
+
+          <h3>
+            Cool Tones
+          </h3>
+
+          <p>
+            Colour and composition study
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- 09 VIDEO -->
+
+      <article class="card reveal">
+
+        <video
+          src="assets/845f9e6c-063b-4eaa-95bd-dac426e75a80.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <span class="play">
+          ▶
+        </span>
+
+        <div class="card-info">
+
+          <div class="type">
+            Beauty · Motion
+          </div>
+
+          <h3>
+            Everyday Ritual
+          </h3>
+
+          <p>
+            Minimal product storytelling
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATEMENT -->
+
+<section class="statement reveal">
+
+  <div class="container">
+
+    <div class="big">
+
+      Good visuals make people stop.<br>
+
+      Great visuals make them feel.
+
+    </div>
+
+    <p>
+
+      Every piece is built around a simple idea:
+      make the product feel desirable, memorable
+      and naturally at home in the viewer's world.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section
+  class="section"
+  id="about"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          About
+        </div>
+
+        <h2>
+          Creative, but intentional.
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="about">
+
+
+      <div class="about-card reveal">
+
+        <h3>
+          The approach
+        </h3>
+
+        <p>
+
+          From a first visual hook to the final frame,
+          the focus stays on mood, composition and
+          the tiny details that make a product feel special.
+
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">
+            UGC concepts
+          </span>
+
+          <span class="skill">
+            Product visuals
+          </span>
+
+          <span class="skill">
+            Creative direction
+          </span>
+
+          <span class="skill">
+            Short-form video
+          </span>
+
+          <span class="skill">
+            Moodboards
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="about-card reveal">
+
+        <h3>
+          Visual language
+        </h3>
+
+        <p>
+
+          Soft editorial layouts, feminine colour
+          stories, tactile product moments and clean
+          storytelling — with enough personality to
+          keep things from feeling generic.
+
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">
+            Beauty
+          </span>
+
+          <span class="skill">
+            Jewellery
+          </span>
+
+          <span class="skill">
+            Fashion
+          </span>
+
+          <span class="skill">
+            Lifestyle
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section
+  class="contact"
+  id="contact"
+>
+
+  <div class="container">
+
+    <div class="contact-box reveal">
+
+      <div class="kicker">
+        Let's work together
+      </div>
+
+      <h2>
+
+        Have an idea?<br>
+        Let's make it beautiful.
+
+      </h2>
+
+      <p>
+
+        For collaborations, UGC, creative concepts
+        or visual projects, get in touch.
+
+      </p>
+
+
+      <div class="contact-links">
+
+        <a
+          class="btn"
+          href="mailto:hawkarc2003@gmail.com"
+        >
+          Email me ↗
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.instagram.com/theaeralla/"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.pinterest.com/TRENDCART77/"
+          target="_blank"
+          rel="noopener"
+        >
+          Pinterest
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-row">
+
+    <span>
+      © <span id="year"></span> TheAeralla
+    </span>
+
+    <span>
+      Creative portfolio · theaeralla
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menu =
+  document.getElementById("menu");
+
+const nav =
+  document.getElementById("navlinks");
+
+
+menu.addEventListener("click", () => {
+
+  const open =
+    nav.classList.toggle("open");
+
+  menu.setAttribute(
+    "aria-expanded",
+    open
+  );
+
+});
+
+
+document
+  .querySelectorAll(".navlinks a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+        nav.classList.remove("open");
+      }
+    );
+
+  });
+
+
+/* YEAR */
+
+document.getElementById("year")
+  .textContent =
+  new Date().getFullYear();
+
+
+/* SCROLL REVEAL */
+
+const observer =
+  new IntersectionObserver(
+
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+</script>
+
+</body>
+</html>
